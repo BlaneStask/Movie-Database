@@ -1,20 +1,3 @@
-/*
-Author: Blane Staskiewicz
-E-mail: bas6248@psu.edu
-Course: CMPSC 221
-Assignment: Programming Assignment 4
-Due date: 3/31/2020
-Files: package movies - driver.java, movie.java, AwardWinningMovie.java
-Purpose: Java application that is a shopping cart, uses Arraylists to
-  enter new items into the cart and checkout with card.
-Compiler/IDE: Java SE Development Kit 13.0.2/Eclipse Foundation
-  IDE 2019-12
-Operating system: macOS Catalina Version 10.15.2
-Reference(s): Java 10 API - Oracle Documentation
-  (https://docs.oracle.com/javase/10/docs/api/)
-  Chapters 9, 10, 11, 12, 14 Lecture Slides
-*/ 
-
 package movies;
 import java.util.*;
 
@@ -24,7 +7,7 @@ public class driver{
 	 * @throws Exception 
 	 * @call   calls other methods to validate and output movies
 	 */
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception{
 		ArrayList<OnDemandMovie> database = new ArrayList<OnDemandMovie>();
 		
 		//movie list
@@ -55,7 +38,7 @@ public class driver{
 		System.out.println();
         
 		//prints movies
-    	for(int i = 0; i < database.size(); i++) {
+    	for(int i = 0; i < database.size(); i++){
     		int location = i + 1;
     		System.out.println("Choice " + location + ": ");
     		System.out.println(database.get(i).toString());
@@ -68,8 +51,8 @@ public class driver{
         //get price based on input
         double payment = 0;
         int user_input = valid(s);
-        for(int i = 0; i < database.size(); i++) {
-        	if((i + 1) == user_input) {
+        for(int i = 0; i < database.size(); i++){
+        	if((i + 1) == user_input){
         		payment = database.get(i).getPrice();
         	}
         }
@@ -83,11 +66,11 @@ public class driver{
 	 * 
 	 * @param	s
 	 */
-	public static int valid(Scanner s) {
+	public static int valid(Scanner s){
 		int user_input = 0;
 		while(user_input != 1 && user_input != 2 && user_input != 3 && user_input != 4 && user_input != 5 && user_input != 6
 				&& user_input != 7 && user_input != 8 && user_input != 9 && user_input != 10) {
-			try {
+			try{
 	    		System.out.print("Please enter the number of the movie you wish to rent: ");
 	    		String input2 = s.nextLine();
 	    		int user_input1 = Integer.parseInt(input2);
@@ -100,7 +83,7 @@ public class driver{
 	    		}
 	    		return user_input1;
 			}
-			catch(Exception e) {
+			catch(Exception e){
 				System.out.println("Exception: java.util.InputMismatchException");
 				System.out.println();
 				System.out.println("Movie choice must be an integer, between 1 - 10. Please try again.");
